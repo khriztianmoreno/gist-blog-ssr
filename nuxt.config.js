@@ -23,6 +23,10 @@ module.exports = {
     '@nuxtjs/bootstrap-vue'
   ],
 
+  plugins: [
+    '~plugins/filters.js'
+  ],
+
   /*
   ** Build configuration
   */
