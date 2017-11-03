@@ -9,21 +9,20 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import { mapState } from 'vuex'
 
   import GistArticle from '~/components/GistArticle.vue'
 
   export default {
-    data () {
-      return { gists: [] }
-    },
-    async asyncData ({ params }) {
-      const { data } = await axios.get('https://api.github.com/users/khriztianmoreno/gists')
-      return { gists: data }
+    async fetch ({ store }) {
+      await store.dispatch('LOAD_GIST_LIST', 'khriztianmoreno')
     },
     components: {
       GistArticle
-    }
+    },
+    computed: mapState([
+      'gists'
+    ])
   }
 </script>
 
