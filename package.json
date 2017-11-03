@@ -21,7 +21,7 @@
     "lodash": "^4.17.4",
     "marked": "^0.3.6",
     "moment": "^2.19.1",
-    "nuxt": "^1.0.0-rc11",
+    "nuxt": "latest",
     "request-promise": "^4.2.2",
     "vue-i18n": "^7.3.2"
   },

@@ -1,3 +1,5 @@
+// Dynamic routes are ignored by the generate command.
+const axios = require('axios')
 const bodyParser = require('body-parser')
 
 module.exports = {
@@ -38,6 +40,17 @@ module.exports = {
     // Api middleware
     '~/api'
   ],
+
+  generate: {
+    routes: function () {
+      return axios.get('https://api.github.com/users/khriztianmoreno/gists')
+        .then((res) => {
+          return res.data.map((gist) => {
+            return '/post/' + gist.id
+          })
+        })
+    }
+  },
 
   /*
   ** Build configuration
