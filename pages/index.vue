@@ -17,6 +17,14 @@
     async fetch ({ store }) {
       await store.dispatch('LOAD_GIST_LIST', 'khriztianmoreno')
     },
+    head () {
+      return {
+        title: 'Nuxt Blog with Gist API || @KHRIZTIANMORENO',
+        meta: [
+          { hid: 'description', name: 'description', content: 'A blog server side render using Gist as API' }
+        ]
+      }
+    },
     components: {
       GistArticle
     },

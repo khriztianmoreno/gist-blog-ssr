@@ -20,6 +20,8 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
 
+  css: ['~/assets/main.css'],
+
   modules: [
     '@nuxtjs/font-awesome',
     '@nuxtjs/bootstrap-vue'
