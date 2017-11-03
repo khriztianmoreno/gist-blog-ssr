@@ -16,8 +16,14 @@
     "@nuxtjs/bootstrap-vue": "^2.0.2",
     "@nuxtjs/font-awesome": "^1.0.2",
     "axios": "^0.17.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "lodash": "^4.17.4",
+    "marked": "^0.3.6",
     "moment": "^2.19.1",
-    "nuxt": "^1.0.0-rc11"
+    "nuxt": "^1.0.0-rc11",
+    "request-promise": "^4.2.2",
+    "vue-i18n": "^7.3.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

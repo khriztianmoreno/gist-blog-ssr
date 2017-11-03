@@ -15,13 +15,13 @@
         <div class="post-meta">
           <span>
           <i class="fa fa-user"></i>
-          By <a :href="gist.owner.html_url" target="_blank">{{ gist.owner.login }}</a>
+          {{ $t('HOME.BY') }} <a :href="gist.owner.html_url" target="_blank">{{ gist.owner.login }}</a>
           </span>
           <span>
           <i class="fa fa-comments"></i>
-          <a :href="gist.comments_url" target="_blank">{{ gist.comments }} Comments</a>
+          <a :href="gist.comments_url" target="_blank">{{ gist.comments }} {{ $t('HOME.COMMENTS') }}</a>
           </span>
-          <a :href="'/post/'+ gist.id +''" class="btn btn-xs btn-primary pull-right">Read more...</a>
+          <a :href="'/post/'+ gist.id +''" class="btn btn-xs btn-primary pull-right">{{ $t('HOME.READ_MORE') }}...</a>
         </div>
       </div>
     </div>

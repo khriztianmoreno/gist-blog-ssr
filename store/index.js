@@ -10,11 +10,18 @@ const API = 'https://api.github.com'
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      gists: []
+      gists: [],
+      locales: ['en', 'es'],
+      locale: 'en'
     },
     mutations: {
       SET_GISTS_LIST (state, gists) {
         state.gists = gists
+      },
+      SET_LANG (state, locale) {
+        if (state.locales.indexOf(locale) !== -1) {
+          state.locale = locale
+        }
       }
     },
     actions: {

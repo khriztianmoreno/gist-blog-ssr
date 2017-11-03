@@ -1,28 +1,67 @@
 <template>
   <div>
-    <form name="form">
+    <form name="form" @submit.prevent="onSubmit()">
       <div class="form-group">
         <label for="name">Title</label>
-        <input type="text" id="name" placeholder="Enter title" required="required" value="" class="form-control"
-        >
+        <input type="text" v-model.trim="title" class="form-control" id="name" placeholder="Enter title" required>
       </div>
       <div class="form-group">
         <label for="description">Description</label>
         <div class="row">
           <div class="col-sm-6">
-            <textarea name="description" rows="10" value="# hello"></textarea>
+            <textarea :value="input" @input="update" name="description" rows="10">
+            </textarea>
           </div>
           <div class="col-sm-6">
-            <div id="editor-result">
-              <h1 id="hello">hello</h1>
-            </div>
+            <div id="editor-result" v-html="compiledMarkdown"></div>
           </div>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Guardar</button>
+      <button type="submit" class="btn btn-primary" >Guardar</button>
     </form>
   </div>
 </template>
+
+<script>
+  import axios from 'axios'
+  import marked from 'marked'
+  import _ from 'lodash'
+
+  export default {
+    data () {
+      return {
+        input: '# hello',
+        title: ''
+      }
+    },
+    computed: {
+      compiledMarkdown: function () {
+        return marked(this.input, { sanitize: true })
+      }
+    },
+    methods: {
+      update: _.debounce(function (e) {
+        this.input = e.target.value
+      }, 300),
+      async onSubmit () {
+        const file = `${this.title.toLowerCase().replace(/\s/g, '-')}.md`
+
+        const gist = {
+          description: this.title,
+          files: {}
+        }
+        gist.files[file] = { content: this.input }
+
+        try {
+          await axios.post('/api/gist', gist)
+          alert('Yeah!!')
+        } catch (error) {
+          console.log('Error', error)
+        }
+      }
+    }
+  }
+</script>
 
 <style lang="scss" scoped>
   #editor {

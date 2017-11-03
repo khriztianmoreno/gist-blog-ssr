@@ -1,0 +1,19 @@
+{
+  "LINKS": {
+    "HOME": "Inicio",
+    "POST": "Articulo"
+  },
+  "HOME": {
+    "TITLE": "Inicio",
+    "INTRODUCTION": "Bienvenido a Gixt Blog!!",
+    "BY": "Autor",
+    "COMMENTS": "Comentarios",
+    "READ_MORE": "Leer más",
+    "SEARCH": "Buscar"
+  },
+  "POST": {
+    "TITLE": "Articulo",
+    "AUTHOR": "Autor",
+    "COMMENTS": "Comentarios"
+  }
+}

@@ -1,3 +1,5 @@
+const bodyParser = require('body-parser')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -24,7 +26,15 @@ module.exports = {
   ],
 
   plugins: [
-    '~plugins/filters.js'
+    '~plugins/filters.js',
+    '~plugins/i18n.js'
+  ],
+
+  serverMiddleware: [
+    // body-parser middleware
+    bodyParser.json(),
+    // Api middleware
+    '~/api'
   ],
 
   /*
