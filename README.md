@@ -9,6 +9,16 @@ Este taller comenzará con una aplicación vacía y describirá cómo usar Vue.j
 
 Para iniciar este taller debe tener instalado previamente en su computador [nodejs](https://www.nodejs.org/)
 
+*Rate Limiting*
+
+*For requests using Basic Authentication or OAuth, you can make up to 5000 requests per hour. Authenticated requests are associated with the authenticated user, regardless of whether Basic Authentication or an OAuth token was used. This means that all OAuth applications authorized by a user share the same quota of 5000 requests per hour when they authenticate with different tokens owned by the same user.*
+
+*For unauthenticated requests, the rate limit allows for up to 60 requests per hour. Unauthenticated requests are associated with the originating IP address, and not the user making requests.*
+
+```sh
+curl -H "Authorization: token OAUTH-TOKEN" https://api.github.com
+```
+
 ## Workshop
 
 Este guía pretende ser una ayuda para realizar el taller de forma autonoma.
