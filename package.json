@@ -13,6 +13,8 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/bootstrap-vue": "^2.0.2",
+    "@nuxtjs/font-awesome": "^1.0.2",
     "nuxt": "^1.0.0-rc11"
   },
   "devDependencies": {
