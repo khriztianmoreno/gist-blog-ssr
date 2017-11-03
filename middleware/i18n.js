@@ -1,4 +1,9 @@
+/**
+ * @author Cristian Moreno <khriztianmoreno@gmail.com>
+ */
+
 export default function ({ app, store, params, error }) {
+  console.log(params)
   // Get locale from params
   const locale = params.lang || 'en'
   if (store.state.locales.indexOf(locale) === -1) {

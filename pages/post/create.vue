@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import { mapActions } from 'vuex'
   import marked from 'marked'
   import _ from 'lodash'
 
@@ -40,10 +40,11 @@
       }
     },
     methods: {
+      ...mapActions(['CREAT_GIST']),
       update: _.debounce(function (e) {
         this.input = e.target.value
       }, 300),
-      async onSubmit () {
+      onSubmit () {
         const file = `${this.title.toLowerCase().replace(/\s/g, '-')}.md`
 
         const gist = {
@@ -52,12 +53,7 @@
         }
         gist.files[file] = { content: this.input }
 
-        try {
-          await axios.post('/api/gist', gist)
-          alert('Yeah!!')
-        } catch (error) {
-          console.log('Error', error)
-        }
+        this.$store.dispatch('CREAT_GIST', gist)
       }
     }
   }
@@ -102,3 +98,4 @@
     color: #f66;
   }
 </style>
+

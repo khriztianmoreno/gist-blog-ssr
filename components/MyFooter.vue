@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-md-12">
             <p>
-              <a href="http://twitter.com/jsconfco">@jsconfco</a> ©
+              <a href="http://twitter.com/khriztianmoreno">@khriztianmoreno</a> ©
               Copyright 2017. All Rights Reserved.</p>
           </div>
         </div>

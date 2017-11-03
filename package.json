@@ -1,7 +1,7 @@
 {
-  "name": "gist-blog-ssr",
+  "name": "nuxt-blog",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "description": "A blog server side render using Gist as API",
   "author": "khriztianmoreno <khriztianmoreno@gmail.com>",
   "private": true,
   "scripts": {
@@ -15,9 +15,11 @@
   "dependencies": {
     "@nuxtjs/bootstrap-vue": "^2.0.2",
     "@nuxtjs/font-awesome": "^1.0.2",
+    "@nuxtjs/toast": "^2.3.0",
     "axios": "^0.17.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
     "lodash": "^4.17.4",
     "marked": "^0.3.6",
     "moment": "^2.19.1",

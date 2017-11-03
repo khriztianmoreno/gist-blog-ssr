@@ -1,17 +1,18 @@
 // Dynamic routes are ignored by the generate command.
 const axios = require('axios')
 const bodyParser = require('body-parser')
+const session = require('express-session')
 
 module.exports = {
   /*
   ** Headers of the page
   */
   head: {
-    title: 'gist-blog-ssr',
+    title: 'nuxt-blog',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'A blog server side render using Gist as API' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -22,7 +23,9 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
 
-  css: ['~/assets/main.css'],
+  css: [
+    'assets/main.css'
+  ],
 
   modules: [
     '@nuxtjs/font-awesome',
@@ -30,6 +33,7 @@ module.exports = {
   ],
 
   plugins: [
+    { src: '~plugins/ga.js', ssr: false },
     '~plugins/filters.js',
     '~plugins/i18n.js'
   ],
@@ -37,6 +41,13 @@ module.exports = {
   serverMiddleware: [
     // body-parser middleware
     bodyParser.json(),
+    // session middleware
+    session({
+      secret: 'super-secret-key',
+      resave: false,
+      saveUninitialized: false,
+      cookie: { maxAge: 60000 }
+    }),
     // Api middleware
     '~/api'
   ],

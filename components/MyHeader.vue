@@ -4,13 +4,13 @@
       <div class="row">
         <div class="col-md-12">
           <ul class="breadcrumb">
-            <li><a href="#">Home</a></li>
+            <li><nuxt-link to="/">{{ $t('HOME.TITLE') }}</nuxt-link></li>
           </ul>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <h2>Welcome to Gist Blog!!</h2>
+          <h2>{{ $t('HOME.INTRODUCTION') }}</h2>
         </div>
       </div>
     </div>
@@ -208,3 +208,4 @@
     }
   }
 </style>
+

@@ -28,6 +28,7 @@ function create (req, res, next) {
     .catch(error => res.status(500).json(error))
 }
 
+/* GET medium  listing. */
 router.post('/gist/', create)
 
 module.exports = router

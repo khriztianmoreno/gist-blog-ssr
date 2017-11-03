@@ -30,8 +30,22 @@
 
 
 <script>
+  import axios from 'axios'
+  import marked from 'marked'
+
   export default {
-    props: ['gist']
+    props: ['gist'],
+    computed: {
+      async compiledMarkdown () {
+        if (this.gist && this.gist.files) {
+          const key = Object.keys(this.gist.files).shift()
+          const url = this.gist.files[key].raw_url
+
+          const { data } = await axios.get(url)
+          return marked(data, { sanitize: true })
+        }
+      }
+    }
   }
 </script>
 
@@ -110,3 +124,4 @@
     }
   }
 </style>
+
