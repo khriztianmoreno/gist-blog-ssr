@@ -1,13 +1,13 @@
 # Build a Server Rendered Vue.js App with Nuxt and Vuex
-Vue.js has a first-class ecosystem to help construct Vue.js apps. This includes Nuxt.js which enables server-rendered applications and a page-based approach.
+Vue.js tiene un ecosistema de primera clase para ayudar a construir aplicaciones Vue.js. Esto incluye Nuxt.js que permite rendirizar aplicaciones desde el servidor y un enfoque basado en páginas.
 
-This workshop will start with an empty app and walk through how to use Vue.js for building the app, Nuxt.js for organizing the app, and Vuex for managing state.
+Este taller comenzará con una aplicación vacía y describirá cómo usar Vue.js para construir la aplicación, Nuxt.js para organizar la aplicación y Vuex para administrar el estado.
 
 ![Nuxt Gists](https://raw.githubusercontent.com/khriztianmoreno/gist-blog-ssr/master/VueNuxtGists.png "Nuxt Gists")
 
 ## Prerequisities
 
-To start this workshop you must have previously installed on your computer [nodejs](https://www.nodejs.org/)
+Para iniciar este taller debe tener instalado previamente en su computador [nodejs](https://www.nodejs.org/)
 
 *Rate Limiting*
 
@@ -20,14 +20,14 @@ curl -H "Authorization: token OAUTH-TOKEN" https://api.github.com
 ```
 
 ## Translate
-You can consult the guide in both Spanish and English.
+Puede consultar la guia tanto en español como en ingles
 
-- [Spanish](ES_README.md)
-- [English](README.md)
+- [Español](ES_README.md)
+- [Ingles](README.md)
 
 ## Workshop
 
-This guide aims to be an aid to carry out the workshop autonomously.
+Este guía pretende ser una ayuda para realizar el taller de forma autonoma.
 
 1. [Setup Vue-CLI](#1-setup-vue-cli)
 2. [Layout & Components](#2-layout--components)
@@ -45,50 +45,48 @@ This guide aims to be an aid to carry out the workshop autonomously.
 
 ### 1. Setup Vue-CLI
 
-The Vue-CLI helps you to quickly and easily setup new Vue projects. Nuxt.js is a library that helps you build server-rendered Vue.js applications. This lesson shows you how to use the nuxt/starter template with the Vue-CLI to quickly start a new project.
+Vue-CLI le ayuda a configurar rápida y fácilmente nuevos proyectos Vue. Nuxt.js es una biblioteca que te ayuda a crear aplicaciones Vue.js procesadas por el servidor. Esta lección le muestra cómo usar la plantilla nuxt / starter con Vue-CLI para comenzar rápidamente un nuevo proyecto.
 
-**Intall Vue-CLI**
+**Instalar Vue-CLI**
 
 ```sh
 $ npm install -g vue-cli
 ```
 
-**Usage**
+**Uso**
 
 ```sh
 $ vue init <template-name> <project-name>
 ```
 
-*Using the startup template of Nuxt.js*
+*Usando la plantilla de inicio de Nuxt.js*
 
 ```sh
 $ vue init nuxt-community/starter-template gist-blog-ssr
 ```
 
-then install the dependencies:
+Completa los pasos que CLI te muestra, luego instala las dependencias:
 
 ```sh
 $ cd gist-blog-ssr
 $ npm install
 ```
 
-and launch the project with:
+y lanza el proyecto con:
 
 ```sh
 $ npm run dev
 ```
 
-The application is now running on http://localhost:3000
-
-*To see these steps complete, you can change to the `1-setup` branch in this repository.*
+*Para ver completos estos pasos, puedes cambiarte al branch `1-setup` en este repositorio.*
 
 ### 2. Layout & Components
 
-You can isolate parts of templates you want to re-use into components, but you can also reuse those components across pages using layouts. This lesson walks you through creation a navigation component then extracting it out into the default layout. Este punto lo guía a través de la creación de un componente de `Header` y `Footer` para luego ser utilizado en el diseño predeterminado.
+Puede aislar partes de las plantillas que desea reutilizar en los componentes, pero también puede reutilizar esos componentes en las páginas mediante diseños. Este punto lo guía a través de la creación de un componente de `Header` y `Footer` para luego ser utilizado en el diseño predeterminado.
 
 #### Header Component
 
-In the `components` folder we will create a file` MyHeader.vue` with the following content:
+En la carpeta `components` vamos a crear un archivo `MyHeader.vue` con el siguiente contenido:
 
 ```
 <template>
@@ -305,7 +303,7 @@ In the `components` folder we will create a file` MyHeader.vue` with the followi
 
 #### Footer Component
 
-In the same folder `components` we create the file` MyFooter.vue` with the following content:
+En la misma carpeta `components` creamos el archivo `MyFooter.vue` con el siguiente contenido:
 
 ```
 <template>
@@ -352,7 +350,7 @@ In the same folder `components` we create the file` MyFooter.vue` with the follo
 
 #### Default Layout
 
-Now we are going to use these two components created previously in our default design, in the `layouts` folder we find the file` default.vue` we overwrite the whole file with the following content:
+Ahora vamamos a utilizar estos dos componentes creados anteriormente en nuestro diseño predeterminado, en la carpeta `layouts` encontramos el archivo `default.vue` sobrescribimos todo el archivo con el siguiente contenido:
 
 ```
 <template>
@@ -387,17 +385,17 @@ Now we are going to use these two components created previously in our default d
 
 ```
 
-*Important:*
+*Importante:*
 
-It is necessary to install the dependencies `sass-loader` and ` node-sass` in order to use *SASS* as a css preprocessor in our project, inside the project root in a terminal run: `npm i -D sass-loader node-sass`
+Es necesario instalar las dependencias `sass-loader` y `node-sass` para poder utilizar *SASS*  como preprocesador css en nuestro proyecto, dentro la raiz del proyecto en una terminal corre: `npm i -D sass-loader node-sass`
 
-*To see these steps complete, you can change to `2-layout-components` branch in this repository.*
+*Para ver completos estos pasos, puedes cambiarte al branch `2-layout-components` en este repositorio.*
 
 ### 3. Pages & Routing
 
-**Nuxt.js** automatically generates the [vue-router](https://github.com/vuejs/vue-router) configuration based on your file tree of Vue files inside the pages directory.
+**Nuxt.js** genera automáticamente la configuración del [vue-router](https://github.com/vuejs/vue-router) en función de su árbol de archivos Vue dentro del directorio de páginas.
 
-We are going to have this file tree in our application:
+Vamos a tener este árbol de archivos en nuestra aplicacion:
 
 ```
 pages/
@@ -408,7 +406,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+generará automáticamente:
 
 ```js
 router: {
@@ -439,7 +437,7 @@ router: {
 
 #### Pages Index
 
-Vue-CLI creates by default an `index.vue` file in the `pages` folder, we will overwrite its contents with the following:
+Vue-CLI crea por defecto un archivo `index.vue` en la carpeta `pages` vamos a sobrescribir su contenido con lo siguiente:
 
 ```
 <template>
@@ -543,7 +541,7 @@ Vue-CLI creates by default an `index.vue` file in the `pages` folder, we will ov
 
 #### Pages Post - Index
 
-Create a `post` folder inside `pages` and create the file `index.vue` that will have the same content of the `index.vue` of the root, only for practical purposes:
+Crear dentro de `pages` una carpeta `post` y ahi crear el archivo `index.vue` que tendra el mismo contenido del `index.vue` de la raiz, solo para efectos practicos:
 
 ```
 <template>
@@ -647,7 +645,7 @@ Create a `post` folder inside `pages` and create the file `index.vue` that will 
 
 #### Pages Post - Create
 
-Inside the `post` folder create the file `create.vue` and add the following content:
+Dentro de la carpeta `post` crear el archivo `create.vue` y agregar el siguiente contenido:
 
 ```
 <template>
@@ -719,7 +717,7 @@ Inside the `post` folder create the file `create.vue` and add the following cont
 
 #### Pages Post - Detail
 
-To define a dynamic route with a param, you need to define a .vue file OR a directory prefixed by an underscore. That's why we're going to create the `_id.vue` file with an empty template for now.
+Para definir una ruta dinámica con un parámetro, necesita definir un archivo .vue O un directorio con un guion bajo. Es por eso que vamos a crear el archivo `_id.vue` con un template vacio por ahora.
 
 ```
 <template>
@@ -727,24 +725,24 @@ To define a dynamic route with a param, you need to define a .vue file OR a dire
 </template>
 ```
 
-*To see these steps complete, you can change to the `3-pages-routing` branch in this repository.*
+*Para ver completos estos pasos, puedes cambiarte al branch `3-pages-routing` en este repositorio.*
 
 ### 4. Modules
 
-Nuxt provides a higher-order module system that makes it easy to extend the core. Modules are simply functions that are called sequentially when booting Nuxt. The framework waits for each module to finish before continuing. In this way, modules can customize almost any aspect of Nuxt. Thanks to Nuxt's modular design (based on webpack's Tapable), modules can easily register hooks for certain entry points like builder initialization. Modules can also override templates, configure webpack loaders, add CSS libraries, and perform any of a number of other useful tasks.
+Nuxt proporciona un sistema de módulo de orden superior que facilita la ampliación del núcleo. Los módulos son simplemente funciones que se llaman secuencialmente al arrancar Nuxt. El marco espera a que termine cada módulo antes de continuar. De esta manera, los módulos pueden personalizar casi cualquier aspecto de Nuxt. Gracias al diseño modular de Nuxt (basado en webpack's Tapable), los módulos pueden registrar hooks fácilmente para ciertos puntos de entrada, como la inicialización del generador. Los módulos también pueden anular plantillas, configurar cargadores de paquetes web, agregar bibliotecas CSS y realizar cualquiera de una serie de otras tareas útiles.
 
-Best of all, Nuxt modules can be incorporated into npm packages. This makes them easy to reuse across projects and to share with the Nuxt community, helping create an ecosystem of high-quality Nuxt add-ons.
+Lo mejor de todo es que los módulos Nuxt se pueden incorporar a paquetes npm. Esto hace que sean fáciles de reutilizar en todos los proyectos y compartir con la comunidad Nuxt, lo que ayuda a crear un ecosistema de complementos Nuxt de alta calidad.
 
-For this point we will add 2 simple modules that will help us in the appearance of our site as they are [Bootstrap-vue](https://github.com/nuxt-community/modules/tree/master/packages/bootstrap-vue) and [Font Awesome](https://github.com/nuxt-community/modules/tree/master/packages/font-awesome)
+Para este punto vamos agregar 2 modulos sencillos que nos ayudará en la apariencia de nuestro sitio como lo son [Bootstrap-vue](https://github.com/nuxt-community/modules/tree/master/packages/bootstrap-vue) y [Font Awesome](https://github.com/nuxt-community/modules/tree/master/packages/font-awesome)
 
 #### Install and configure community modules
 
-To install these 2 modules we run the following instruction in our terminal: `npm i -S @nuxtjs/font-awesome @nuxtjs/bootstrap-vue` 
+Para instalar estos 2 modulos corremos en nuestra terminal la siguiente instruccion: `npm i -S @nuxtjs/font-awesome @nuxtjs/bootstrap-vue` 
 
-Now it is necessary to configure these modules in the `nuxt.config.js` file located in the root of our project in order to be loaded at the time of running the Nuxt server.
+Ahora es necesario configurar estos modulos en el archivo `nuxt.config.js` situado en la raiz de nuestro proyecto con el fin de que sean cargados en el momento de correr el servidor de Nuxt.
 
 ```js
-// Add after the key loading
+// Agregar luego de la llave loading
 
 modules: [
   '@nuxtjs/font-awesome',
@@ -752,16 +750,16 @@ modules: [
 ]
 ```
 
-*To see these steps complete, you can change to the `4-modules` branch in this repository.*
+*Para ver completos estos pasos, puedes cambiarte al branch `4-modules` en este repositorio.*
 
 
 ### 5. Async Data
 
-You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method to let you handle async operations before setting the component data.
+Es posible que desee buscar datos y procesarlos en el lado del servidor. Nuxt.js agrega un método `asyncData` para permitirle manejar operaciones asíncronas antes de configurar los datos del componente. 
 
 #### Dummy Gists
 
-In our page `index.vue` we will add the `script` where we will work all our javascript code:
+En nuestro pagina `index.vue` vamos agregar el `script` donde trabajaremos todo nuestro codigo javascript
 
 ```
 <script>
@@ -868,7 +866,7 @@ In our page `index.vue` we will add the `script` where we will work all our java
 
 #### Method
 
-Nuxt.js offers you different ways to use asyncData. Choose the one you're the most familiar with: `Promise`, `async/await` o `callback`
+Nuxt.js te ofrece diferentes formas de usar asyncData. Elija el que más le gusta: `Promise`, `async/await` o `callback`
 
 ```
 <script>
@@ -888,7 +886,7 @@ Nuxt.js offers you different ways to use asyncData. Choose the one you're the mo
 
 #### Refactor Page
 
-We are going to make an improvement to our current main page to use a component that we can reuse later, that's why in the `components` folder we created the file `GistArticle.vue` with the following content:
+Vamos a realizar una mejora a nuestra actual pagina principal para usar un componente que podamos reutilizar mas adelante, por eso en la carpeta `components` creamos el archivo `GistArticle.vue` con el siguiente contenido:
 
 ```
 <template>
@@ -1005,7 +1003,7 @@ We are going to make an improvement to our current main page to use a component 
 </style>
 ```
 
-And now our main page `index.vue` should be as follows:
+Y ahora nuestro pagina principla `index.vue` debe quedar de la siguiente manera: 
 
 ```
 <template>
@@ -1144,18 +1142,18 @@ And now our main page `index.vue` should be as follows:
 </style>
 ```
 
-*To see these steps complete, you can change to the `5-async-data` branch in this repository.*
+*Para ver completos estos pasos, puedes cambiarte al branch `5-async-data` en este repositorio.*
 
 ### 6. Plugins
 
-Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root vue.js application. This is especially helpful when using your own libraries or external modules.
+Nuxt.js le permite definir complementos JavaScript para ejecutar antes de crear una instancia de la aplicación raíz vue.js. Esto es especialmente útil cuando usa sus propias bibliotecas o módulos externos.
 
 #### Custom Plugin
 
-So far we have seen how to load an array in our main view, but if we look at the browser console in the developer tools we will notice that we have an error `[Vue warn]: Failed to resolve filter: date` this happens because in our component `GistArticle.vue` uses a filter to improve the readability of the created date of the article. Let's now create a custom filter to solve this.
+Hasta ahora hemos visto como cargar un array en nuestra vista principal, pero si observamos la consola del navegador en las developer tools nos daremos cuenta que tenemos un error `[Vue warn]: Failed to resolve filter: date` esto sucede porque en nuestro componente `GistArticle.vue` utiliza un filtro para mejorar la legibilidad de la fecha de creado del articulo. Vamos ahora a crear un filtro personalizado para resolver esto. 
 
-- The first thing is to install `moment.js` to support us from this library and make the development faster: `npm i -S moment`
-- Then in the folder `plugins` we create the file `filters.js` with the following content:
+- Lo primero es instalar `moment.js` para apoyarnos de esta libreria y hacer mas rapido el desarrollo: `npm i -S moment`
+- Luego en la carpeta `plugins` creamos el archivo `filters.js` con el siguiente contenido:
 
 ```js
 import Vue from 'vue'
@@ -1167,10 +1165,10 @@ Vue.filter('date', (value, format) => {
   }
 })
 ```
-- Finally we must add our filter in the configuration file of `nuxt.config.js`
+- Por ultimo debemos agregar nuestro filtro en el archivo de configuracion de `nuxt.config.js`
 
 ```js
-// Add after the key modules
+// Agregar luego de la llave modules
 
 plugins: [
   '~plugins/filters.js'
@@ -1179,19 +1177,19 @@ plugins: [
 
 #### External Packages
 
-We may want to use external packages/modules in our application, one great example is axios for making HTTP request for both server and client. We install it via npm: `npm i --S axios`
+Es posible que deseemos utilizar paquetes / módulos externos en nuestra aplicación, un gran ejemplo es axios para realizar solicitudes HTTP tanto para el servidor como para el cliente. Lo instalamos a través de npm: `npm i --S axios`
 
-*Note*
+*Nota*
 
-Axios could be added as a module as we saw in `4. Modules` but for example purposes we are going to use it as an external plugin.
+Axios pudó ser agregado como un modulo como lo vimos en `4. Modules` pero con fines de ejemplo vamos a utilizarlo como un plugin externo.
 
-In our main page `index.vue` we are going to change a bit the response of the `asyncData` method to use an asynchronous call to the API of [GitHub](https://developer.github.com/v3/gists/).
+En nuestra pagina principal `index.vue` vamos a cambiar un poco la respuesta del metodo `asyncData` para utilizar un llamado asincrono a la API de [GitHub](https://developer.github.com/v3/gists/).
 
 ```
-  // Add
+  // Agregar
   import axios from 'axios'
 
-  // Remove
+  // Eliminar
   const gists ...
 
   export default {
@@ -1201,7 +1199,7 @@ In our main page `index.vue` we are going to change a bit the response of the `a
     },
 
 
-    // Change
+    // Modificar
     async asyncData ({ params }) {
       const { data } = await axios.get('https://api.github.com/users/khriztianmoreno/gists')
       return { gists: data }
@@ -1214,9 +1212,9 @@ In our main page `index.vue` we are going to change a bit the response of the `a
 
 #### Client-side only
 
-Some plugins might work only for the browser, you can use the `ssr: false` option in `plugins` to run the file only on the client-side.
+Algunos complementos pueden funcionar solo en el navegador, puede usar la opción `ssr: false` en `plugins` para ejecutar el archivo solo en el lado del cliente. 
 
-Example: `nuxt.config.js`
+Ejemplo: `nuxt.config.js`
 
 ```js
 module.exports = {
@@ -1226,8 +1224,7 @@ module.exports = {
 }
 ```
 
-*It is necessary to have in the `qa.js` file in the 
-`plugins` folder*
+*Es necesario tener en el archivo `qa.js` en la carpeta `plugins`*
 
 ```js 
 /* eslint-disable */
@@ -1261,21 +1258,25 @@ export default ({ app }) => {
 }
 ```
 
-*To see these steps complete, you can change to the `6-plugins` branch in this repository.*
+*Para ver completos estos pasos, puedes cambiarte al branch `6-plugins` en este repositorio.*
 
 ### 7. Vuex Store
 
-Using a store to manage the state is important to every big application, that's why nuxt.js implement [Vuex](https://vuex.vuejs.org/en/) in its core.
+Usar una store para administrar el estado es importante para cada gran aplicación, por eso nuxt.js implementa [Vuex](https://vuex.vuejs.org/en/) en su núcleo.
 
 #### Activate the Store
 
-Nuxt.js will look for the `store` directory, if it exists, it will:
+Nuxt.js buscará el directorio `store`, si existe: 
 
-- Import Vuex, 
-- Add `vuex` module in the vendors bundle
-- Add the `store` option to the root Vue instance.
+- Importar Vuex, 
+- Agregue el módulo vuex en el paquete de proveedores
+- Agregue la opción `store` a la instancia raíz de Vue.
 
 ```js
+/**
+ * @author: Cristian Moreno <khriztianmoreno@gmail.com>
+ */
+
 import Vuex from 'vuex'
 import axios from 'axios'
 
@@ -1309,9 +1310,9 @@ export default createStore
 
 #### The fetch Method
 
-The `fetch` method is used to fill the store before rendering the page, it's like the `asyncData` method except it doesn't set the component data.
+El método `fetch` se usa para llenar la tienda antes de representar la página, es como el método de `data`, excepto que no establece los datos del componente.
 
-In `index.vue` we are going to replace the way we check the data of the GitHub API to use `Vuex`. Eliminate the dependence of `axios` and `asyncData` method, replace them with `fetch`, and we will help you with a couple of `vuex` functions to bring the same data.
+En `index.vue` vamos a reemplazar la forma como consultamos los datos de la API de GitHub para utilizar `Vuex`. Eliminamos la dependencia de `axios` y metodo `asyncData` los remplazamos por `fetch` ademas nos ayudaremos de un par de funciones de `vuex` para traer los mismos datos.
 
 ```
 <script>
@@ -1333,21 +1334,21 @@ In `index.vue` we are going to replace the way we check the data of the GitHub A
 </script>
 ```
 
-*To see these steps complete, you can change to the `7-vuex-store` branch in this repository.*
+*Para ver completos estos pasos, puedes cambiarte al branch `7-vuex-store` en este repositorio.*
 
 
 ### 8. ServerMiddleware vs Middleware
 
 #### Middleware
 
-The middleware allows you to define custom functions that can be executed before rendering a page or a group of pages.
+El middleware le permite definir funciones personalizadas que se pueden ejecutar antes de representar una página o un grupo de páginas.
 
-Each middleware must be placed in the middleware / directory. The name of the file will be the name of the middleware(`middleware/i18n.js`).
+Cada middleware debe colocarse en el `middleware` / directorio. El nombre del archivo será el nombre del middleware (`middleware/i18n.js`).
 
-We will use this concept to add the internalization of our site using [vue-i18n](https://github.com/kazupon/vue-i18n). 
+Vamos a utilizar este concepto para agregar la internalizacion de nuestro sitio utilizando [vue-i18n](https://github.com/kazupon/vue-i18n). 
 
-- Run in terminal: `npm i -S vue-i18n`
-- We create a middleware called `i18n.js` with the following content that will be executed before rendering any page
+- Ejecutamos en nuestra terminal: `npm i -S vue-i18n`
+- Creamos un middleware llamado `i18n.js` con el siguiente contenido que sera ejecutado ante de renderizar alguna pagina
 
 ```js
 export default function ({ app, store, params, error }) {
@@ -1362,7 +1363,7 @@ export default function ({ app, store, params, error }) {
 }
 ```
 
-- We add a plugin `i18n.js` and register it in `nuxt.config.js`
+- Agramos un plugin `i18n.js` y lo registramos en `nuxt.config.js`
 ```js
 
 import Vue from 'vue'
@@ -1383,7 +1384,7 @@ export default ({ app, store }) => {
   })
 }
 ```
-- We create the `json` files that will have our translation in the `local` folder for both the English language `en.json` and Spanish `es.json`:
+- Creamos los archivos `json` que tendran nuestra traduccion en la carpeta `locales` tanto para el idioma ingles `en.json` como español `es.json`:
 ```json
 {
   "LINKS": {
@@ -1405,20 +1406,20 @@ export default ({ app, store }) => {
   }
 }
 ```
-- And finally in our `store` we add the necessary elements for the correct functioning of the internalization
+- Y por ultimo en nuestro `store` agregamos los elementos necesario para el correcto funcionamiento de la internalizacion
 ```js
 const createStore = () => {
   return new Vuex.Store({
     state: {
       gists: [],
-      // add
+      // Agregar
       locales: ['en', 'es'],
       locale: 'en'
     },
     ...
     mutations: {
       ...
-      // add
+      // agregar
       SET_LANG (state, locale) {
         if (state.locales.indexOf(locale) !== -1) {
           state.locale = locale
@@ -1427,7 +1428,7 @@ const createStore = () => {
       ...
     }
 ```
-- Now it's just changing the texts present in the `GistArticle.vue` component by the `t()` function of `i18n`
+- Ahora solo es cambiar los textos presents en el componente `GistArticle.vue` por la funcion de `t()` de `i18n` 
 ```
 <template>
   <article class="post post-large">
@@ -1462,11 +1463,11 @@ const createStore = () => {
 
 #### ServerMiddleware
 
-Are just running in server side before vue-server-renderer and can be used for server specific tasks like handling API requests or serving assets.
+Se está ejecutando en el lado del servidor antes de vue-server-renderer y se puede usar para tareas específicas del servidor, como el manejo de solicitudes API o el servicio de activos.
 
-To better demonstrate this property, let's use the `post/create` page by creating a simple API in `Express.js` that allows us to create a Gist directly on GitHub.
+Para demostrar mejor esta propiedad, vamos a darle uso a la pagina `post/create` creando una simple API en `Express.js` que nos permita crear un Gist directamente en GitHub.
 
-- **serverMiddleware** in file `nuxt.config.js`
+- **serverMiddleware** en el archivo `nuxt.config.js`
 
 ```js
 const bodyParser = require('body-parser')
@@ -1483,14 +1484,14 @@ module.exports = {
 }
 ```
 
-We are going to have this file tree in our api folder (in the root of the project):
+Vamos a tener este árbol de archivos en nuestra carpeta api (en la raiz del proyecto):
 
 ```
 api/
 --| gist.js
 --| index.js
 ```
-- Install the necessary dependencies for our api with express.js
+- Instalar las dependencias necesarias para nuestra api con express.js
 
 ```sh
 $ npm i -S body-parser express request-promise
@@ -1503,7 +1504,6 @@ const request = require('request-promise')
 
 const router = Router()
 
-// Personal access tokens: https://github.com/settings/tokens
 const TOKEN_GITHUB = '3ab7b782c21a3b3f329129654494dc5ca79e977c'
 
 function create (req, res, next) {
@@ -1534,7 +1534,7 @@ router.post('/gist/', create)
 module.exports = router
 ```
 
-*It is necessary to create a **GitHub personal access tokens** in order to create the gist associated with a user, otherwise it would be created anonymously* [GitHub personal access tokens](https://github.com/settings/tokens)
+*Es necesario crear un **GitHub personal access tokens** para poder realizar la creacion de gist asociados a un usuario, de lo contrario este seria creado anonimamente*  [GitHub personal access tokens](https://github.com/settings/tokens)
 
 
 - `index.js`
@@ -1567,13 +1567,13 @@ module.exports = {
 }
 ```
 
-To achieve an appearance of editor markdown in our form we are going to install these libraries
+Para lograr una apariencia de editor markdown en nuestro formulario vamos a instalar estas librerias
 
 ```sh
 $ npm i -S marked lodash
 ```
 
-- Finally our creation form of a new Gist `pages/post/create.vue` would look like this:
+- Finalmente nuestro fomulario de creacion de un nuevo Gist `pages/post/create.vue` quedaria asi:
 
 ```
 <template>
@@ -1682,20 +1682,20 @@ $ npm i -S marked lodash
 </style>
 ```
 
-*To see these steps complete, you can change to the `8-serverMiddleware-middleware` branch in this repository.*
+*Para ver completos estos pasos, puedes cambiarte al branch `8-serverMiddleware-middleware` en este repositorio.*
 
 ### 9. Utils
 
 #### The head Method
-Nuxt.js use [vue-meta](https://github.com/declandewet/vue-meta) to update the headings and html attributes of your application.
+Nuxt.js usa [vue-meta](https://github.com/declandewet/vue-meta) para actualizar los encabezados y atributos html de su aplicación.
 
-Use the head method to set the HTML `Head` tags for the current page. Your component data are available with this in the head method, you can use set custom meta tags with the page data.
+Use el método principal para establecer las etiquetas HTML `Head` para la página actual. Los datos de sus componentes están disponibles con esto en el método principal, puede usar establecer metaetiquetas personalizadas con los datos de la página.
 
 ```
 <script>
   export default {
     ...
-    // add
+    // Agregar
     head () {
       return {
         title: 'Nuxt Blog with Gist API || @KHRIZTIANMORENO',
@@ -1712,7 +1712,7 @@ Use the head method to set the HTML `Head` tags for the current page. Your compo
 
 #### Assets
 
-By default, Nuxt uses vue-loader, file-loader and url-loader webpack loaders for strong assets serving. You can also use Static directory for static assets.
+De forma predeterminada, Nuxt utiliza cargadores vue-loader, file-loader y url-loader cargadores de activos fuertes que sirven. También puede usar el directorio estático para activos estáticos.
 
 ```
 -| assets/
@@ -1730,30 +1730,30 @@ By default, Nuxt uses vue-loader, file-loader and url-loader webpack loaders for
 }
 ```
 
-- Add the css to `nuxt.config.js`
+- Agregar el css a `nuxt.config.js`
 ```js
 module.exports = {
   css: ['~/assets/main.css']
 }
 ```
 
-*To see these steps complete, you can change to the `9-utils` branch in this repository.*
+*Para ver completos estos pasos, puedes cambiarte al branch `9-utils` en este repositorio.*
 
 
 ### 10. Deployment
 
-Nuxt.js comes with a set of useful commands, both for development and production purpose. Nuxt.js lets your choose between three modes to deploy your application: Server Rendered, SPA or Static Generated.
+Nuxt.js viene con un conjunto de comandos útiles, tanto para fines de desarrollo como de producción. Nuxt.js le permite elegir entre tres modos para implementar su aplicación: Server Rendered, SPA o generado estático.
 
 #### Server Rendered Deployment (Universal)
 
-To deploy, instead of running `nuxt`, you probably want to build ahead of time. Therefore, building and starting are separate commands:
+Para implementar, en lugar de ejecutar nuxt, es probable que desee construir antes de tiempo. Por lo tanto, construir y comenzar son comandos separados:
 
 ```sh
 $ nuxt build
 $ nuxt start
 ```
 
-The `package.json` like follows is recommended:
+Se recomienda el siguiente `package.json`:
 
 ```json
 {
@@ -1769,22 +1769,22 @@ The `package.json` like follows is recommended:
 }
 ```
 
-¡Run [now](https://zeit.co/now) to deploy. Every time you run now, you get a new deployment!
+¡Entonces corre [now](https://zeit.co/now) y disfruta!
 
 
 #### Static Generated Deployment (Pre Rendered)
 
-Nuxt.js gives you the ability to host your web application on any static hosting.
+Nuxt.js le da la capacidad de alojar su aplicación web en cualquier alojamiento estático. 
 
-To generate our web application into static files:
+Para generar nuestra aplicación web en archivos estáticos:
 
 ```sh
 $ nuxt generate
 ```
 
-It will create a `dist` folder with everything inside ready to be deployed on a static hosting site.
+Creará una carpeta `dist` con todo lo que está dentro listo para implementarse en un sitio de alojamiento estático. 
 
-As our project has dynamic routes, it is necessary to add a special configuration to our `nuxt.confi.js` file, particularly in this case our dynamic routes would be the details of each Gist.
+Como nuestro  proyecto tiene rutas dinámicas, es necesario agregar una configuracion especial a nuestro archivo `nuxt.confi.js` particularmente en este caso nuestras rutas dinamicas serian los detalles de cada Gist
 
 ```js
 // Dynamic routes are ignored by the generate command.
@@ -1804,16 +1804,16 @@ module.exports = {
 }
 ```
 
-*To see these steps complete, you can change to the `10-deployment` branch in this repository.*
+*Para ver completos estos pasos, puedes cambiarte al branch `10-deployment` en este repositorio.*
 
 ### 11. :mortar_board: Challenge
 
-To be more fun and productive instance in this workshop, I invite you to build the gist detail page `post/_id.vue` with everything learned so far and also a search engine that allows you to write any `NickName` of github and drink his Gist.
+Para ser mas divertido y productivo la instancia en este taller, te invito a construir la pagina del detalle del gist `post/_id.vue` con todo lo aprendido hasta ahora y ademas un buscador que permita escribir cualquier `NickName` de github y trago sus Gist.
 
-*To see these steps complete, you can change to the `11-challenge` branch in this repository.*
+*Para ver completos estos pasos, puedes cambiarte al branch `11-challenge` en este repositorio.*
 
 ### 12. Thanks
 
-Thanks to [JSConf CO](https://jsconf.co/) for allowing me to share this workshop in the 2017 version.
+Gracias a [JSConf CO](https://jsconf.co/) por permitirme compartir este taller en la version 2017.
 
 ## @khriztianmoreno
