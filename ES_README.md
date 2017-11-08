@@ -88,7 +88,7 @@ Puede aislar partes de las plantillas que desea reutilizar en los componentes, p
 
 En la carpeta `components` vamos a crear un archivo `MyHeader.vue` con el siguiente contenido:
 
-```
+``` vue
 <template>
   <header class="page-header">
     <div class="container">
@@ -305,7 +305,7 @@ En la carpeta `components` vamos a crear un archivo `MyHeader.vue` con el siguie
 
 En la misma carpeta `components` creamos el archivo `MyFooter.vue` con el siguiente contenido:
 
-```
+``` vue
 <template>
   <footer id="footer">
     <div class="footer-copyright">
@@ -352,7 +352,7 @@ En la misma carpeta `components` creamos el archivo `MyFooter.vue` con el siguie
 
 Ahora vamamos a utilizar estos dos componentes creados anteriormente en nuestro diseño predeterminado, en la carpeta `layouts` encontramos el archivo `default.vue` sobrescribimos todo el archivo con el siguiente contenido:
 
-```
+``` vue
 <template>
   <div class="body">
     <div role="main" class="main">
@@ -439,7 +439,7 @@ router: {
 
 Vue-CLI crea por defecto un archivo `index.vue` en la carpeta `pages` vamos a sobrescribir su contenido con lo siguiente:
 
-```
+``` vue
 <template>
   <article class="post post-large">
     <div>
@@ -543,7 +543,7 @@ Vue-CLI crea por defecto un archivo `index.vue` en la carpeta `pages` vamos a so
 
 Crear dentro de `pages` una carpeta `post` y ahi crear el archivo `index.vue` que tendra el mismo contenido del `index.vue` de la raiz, solo para efectos practicos:
 
-```
+``` vue
 <template>
   <article class="post post-large">
     <div>
@@ -647,7 +647,7 @@ Crear dentro de `pages` una carpeta `post` y ahi crear el archivo `index.vue` qu
 
 Dentro de la carpeta `post` crear el archivo `create.vue` y agregar el siguiente contenido:
 
-```
+``` vue
 <template>
   <div>
     <form name="form">
@@ -719,7 +719,7 @@ Dentro de la carpeta `post` crear el archivo `create.vue` y agregar el siguiente
 
 Para definir una ruta dinámica con un parámetro, necesita definir un archivo .vue O un directorio con un guion bajo. Es por eso que vamos a crear el archivo `_id.vue` con un template vacio por ahora.
 
-```
+``` vue
 <template>
   <h1>Detalle</h1>
 </template>
@@ -761,7 +761,7 @@ Es posible que desee buscar datos y procesarlos en el lado del servidor. Nuxt.js
 
 En nuestro pagina `index.vue` vamos agregar el `script` donde trabajaremos todo nuestro codigo javascript
 
-```
+``` vue
 <script>
   const gistsLocal = [
     {
@@ -868,7 +868,7 @@ En nuestro pagina `index.vue` vamos agregar el `script` donde trabajaremos todo 
 
 Nuxt.js te ofrece diferentes formas de usar asyncData. Elija el que más le gusta: `Promise`, `async/await` o `callback`
 
-```
+``` vue
 <script>
   // ... const gistsLocal
 
@@ -888,7 +888,7 @@ Nuxt.js te ofrece diferentes formas de usar asyncData. Elija el que más le gust
 
 Vamos a realizar una mejora a nuestra actual pagina principal para usar un componente que podamos reutilizar mas adelante, por eso en la carpeta `components` creamos el archivo `GistArticle.vue` con el siguiente contenido:
 
-```
+``` vue
 <template>
   <article class="post post-large">
     <div v-if="gist">
@@ -1005,7 +1005,7 @@ Vamos a realizar una mejora a nuestra actual pagina principal para usar un compo
 
 Y ahora nuestro pagina principla `index.vue` debe quedar de la siguiente manera: 
 
-```
+``` vue
 <template>
   <section>
     <div class="main-container">
@@ -1185,7 +1185,7 @@ Axios pudó ser agregado como un modulo como lo vimos en `4. Modules` pero con f
 
 En nuestra pagina principal `index.vue` vamos a cambiar un poco la respuesta del metodo `asyncData` para utilizar un llamado asincrono a la API de [GitHub](https://developer.github.com/v3/gists/).
 
-```
+``` vue
   // Agregar
   import axios from 'axios'
 
@@ -1314,7 +1314,7 @@ El método `fetch` se usa para llenar la tienda antes de representar la página,
 
 En `index.vue` vamos a reemplazar la forma como consultamos los datos de la API de GitHub para utilizar `Vuex`. Eliminamos la dependencia de `axios` y metodo `asyncData` los remplazamos por `fetch` ademas nos ayudaremos de un par de funciones de `vuex` para traer los mismos datos.
 
-```
+``` vue
 <script>
   import { mapState } from 'vuex'
 
@@ -1429,7 +1429,7 @@ const createStore = () => {
     }
 ```
 - Ahora solo es cambiar los textos presents en el componente `GistArticle.vue` por la funcion de `t()` de `i18n` 
-```
+``` vue
 <template>
   <article class="post post-large">
     <div v-if="gist">
@@ -1575,7 +1575,7 @@ $ npm i -S marked lodash
 
 - Finalmente nuestro fomulario de creacion de un nuevo Gist `pages/post/create.vue` quedaria asi:
 
-```
+``` vue
 <template>
   <div>
     <form name="form" @submit.prevent="onSubmit()">
@@ -1691,7 +1691,7 @@ Nuxt.js usa [vue-meta](https://github.com/declandewet/vue-meta) para actualizar 
 
 Use el método principal para establecer las etiquetas HTML `Head` para la página actual. Los datos de sus componentes están disponibles con esto en el método principal, puede usar establecer metaetiquetas personalizadas con los datos de la página.
 
-```
+``` vue
 <script>
   export default {
     ...
