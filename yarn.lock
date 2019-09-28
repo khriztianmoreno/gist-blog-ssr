@@ -8,9 +8,9 @@
   dependencies:
     bootstrap-vue "^1.0.1"
 
-"@nuxtjs/font-awesome@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/font-awesome/-/font-awesome-1.0.2.tgz#cf1740e04b36e94476ed5cba69aef14a773625a2"
+"@nuxtjs/font-awesome@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/font-awesome/-/font-awesome-1.0.4.tgz#ffd543970fbedb41859129b52050020c676bb7b4"
   dependencies:
     font-awesome "^4.7.0"
 
