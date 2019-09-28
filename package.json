@@ -16,7 +16,7 @@
     "@nuxtjs/bootstrap-vue": "^2.0.2",
     "@nuxtjs/font-awesome": "^1.0.2",
     "@nuxtjs/toast": "^2.3.0",
-    "axios": "^0.17.0",
+    "axios": "^0.18.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
