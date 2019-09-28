@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@nuxtjs/bootstrap-vue": "2.0.4",
-    "@nuxtjs/font-awesome": "1.0.2",
+    "@nuxtjs/font-awesome": "1.0.4",
     "@nuxtjs/toast": "2.3.0",
     "axios": "0.18.1",
     "body-parser": "1.18.2",
