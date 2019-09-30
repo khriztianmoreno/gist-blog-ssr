@@ -14,11 +14,11 @@
   dependencies:
     font-awesome "^4.7.0"
 
-"@nuxtjs/toast@2.3.3":
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/toast/-/toast-2.3.3.tgz#b4168523dad016168f84cf0e6576da3047ebbe07"
+"@nuxtjs/toast@3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/toast/-/toast-3.2.1.tgz#b104c9139d609cf0966287aba38fa430e89d2c09"
   dependencies:
-    vue-toasted "^1.1.24"
+    vue-toasted "^1.1.27"
 
 "@nuxtjs/youch@3.0.2":
   version "3.0.2"
@@ -6044,7 +6044,7 @@ vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
 
-vue-toasted@^1.1.24:
+vue-toasted@^1.1.27:
   version "1.1.27"
   resolved "https://registry.yarnpkg.com/vue-toasted/-/vue-toasted-1.1.27.tgz#ce0a74b875f90c2e4a9e163cce6d5fc37d78a07c"
 
