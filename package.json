@@ -24,7 +24,7 @@
     "marked": "0.7.0",
     "moment": "2.24.0",
     "nuxt": "latest",
-    "request-promise": "4.2.4",
+    "request-promise": "4.2.5",
     "vue-i18n": "8.15.0"
   },
   "devDependencies": {
