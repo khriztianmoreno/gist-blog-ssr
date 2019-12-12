@@ -21,7 +21,7 @@
     "express": "4.17.1",
     "express-session": "1.17.0",
     "lodash": "4.17.15",
-    "marked": "0.7.0",
+    "marked": "0.8.0",
     "moment": "2.24.0",
     "nuxt": "latest",
     "request-promise": "4.2.5",
