@@ -1,9 +1,17 @@
 // Dynamic routes are ignored by the generate command.
+const path = require('path')
 const axios = require('axios')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 
 module.exports = {
+  configureWebpack: {
+    resolve: {
+      alias: {
+        'bootstrap-components': path.resolve(__dirname, 'node_modules/bootstrap-vue/es/components')
+      }
+    }
+  },
   /*
   ** Headers of the page
   */
@@ -35,7 +43,8 @@ module.exports = {
   plugins: [
     { src: '~plugins/ga.js', ssr: false },
     '~plugins/filters.js',
-    '~plugins/i18n.js'
+    '~plugins/i18n.js',
+    '~/plugins/bootstrap-vue'
   ],
 
   serverMiddleware: [

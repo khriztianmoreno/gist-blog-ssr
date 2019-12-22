@@ -16,7 +16,7 @@ function create (req, res, next) {
     url: 'https://api.github.com/gists',
     method: 'POST',
     headers: {
-      'Authorization': `token ${TOKEN_GITHUB}`,
+      Authorization: `token ${TOKEN_GITHUB}`,
       'User-Agent': 'khriztianmoreno'
     },
     json: true,
