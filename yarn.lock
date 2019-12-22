@@ -1701,17 +1701,7 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
-bootstrap-vue@^1.0.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/bootstrap-vue/-/bootstrap-vue-1.5.1.tgz#0baa713d3b34a6c39197323f93989f7af55bc286"
-  integrity sha512-bkob7vTHA5VZN6U0Wj34Yj+6jNtqAtc6MwcsLdBz78fcy8Ju5tlYUYMDUefQ0rQH7hhdtFDn9GuDiqhUPmE1sA==
-  dependencies:
-    lodash.startcase "^4.4.0"
-    opencollective "^1.0.3"
-    popper.js "^1.12.9"
-    vue-functional-data-merge "^2.0.3"
-
-bootstrap-vue@^2.1.0:
+bootstrap-vue@2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/bootstrap-vue/-/bootstrap-vue-2.1.0.tgz#41c0cd265a6cea14ffe29eeea71543ec396d1789"
   integrity sha512-dftb5fc42x7QLv814nN+3Cx8MMuCB+xrGQjOmSXH81ET0+yo7KYb4lUN3/pOnf+8Tkv8oaawZ1OOth5/AZfktg==
@@ -1721,6 +1711,16 @@ bootstrap-vue@^2.1.0:
     popper.js "^1.16.0"
     portal-vue "^2.1.6"
     vue-functional-data-merge "^3.1.0"
+
+bootstrap-vue@^1.0.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/bootstrap-vue/-/bootstrap-vue-1.5.1.tgz#0baa713d3b34a6c39197323f93989f7af55bc286"
+  integrity sha512-bkob7vTHA5VZN6U0Wj34Yj+6jNtqAtc6MwcsLdBz78fcy8Ju5tlYUYMDUefQ0rQH7hhdtFDn9GuDiqhUPmE1sA==
+  dependencies:
+    lodash.startcase "^4.4.0"
+    opencollective "^1.0.3"
+    popper.js "^1.12.9"
+    vue-functional-data-merge "^2.0.3"
 
 "bootstrap@>=4.3.1 <5.0.0":
   version "4.4.1"
@@ -5517,7 +5517,7 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt@^2.11.0:
+nuxt@2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.11.0.tgz#654664fe1a95af2014fd55c38ba2c732bfa5edc5"
   integrity sha512-Y7lastjYWIOppja0FaWozPfkvlmJ8uZSqWx0VbK7l5djbHls5jgUGag0iu6GsNNwCFTKpoAtptNHiWOsyMxStA==
