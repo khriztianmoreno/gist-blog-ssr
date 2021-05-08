@@ -21,7 +21,7 @@
     "bootstrap-vue": "2.1.0",
     "express": "4.17.1",
     "express-session": "1.17.0",
-    "lodash": "4.17.19",
+    "lodash": "4.17.21",
     "marked": "0.8.0",
     "moment": "2.24.0",
     "nuxt": "2.11.0",
